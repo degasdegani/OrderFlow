@@ -1,0 +1,17 @@
+﻿namespace OrderFlow.Application.DTOs.Stock;
+
+public class StockMovementResponseDto
+{
+    public Guid Id { get; set; }
+    public Guid ProductId { get; set; }
+    public string ProductName { get; set; } = string.Empty;
+    public string ProductSKU { get; set; } = string.Empty;
+    public string MovementType { get; set; } = string.Empty;
+    public int Quantity { get; set; }
+    public int PreviousQuantity { get; set; }
+    public int NewQuantity { get; set; }
+    public string Reason { get; set; } = string.Empty;
+    public Guid UserId { get; set; }
+    public string UserName { get; set; } = string.Empty;
+    public DateTime CreatedAt { get; set; }
+}
