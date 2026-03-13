@@ -31,6 +31,39 @@ API RESTful para **gerenciamento comercial completo** — clientes, fornecedores
 
 ---
 
+## 📸 Screenshots
+
+### Autenticação JWT
+![Auth](docs/screenshots/01-auth.png)
+
+### Categorias
+![Category Create](docs/screenshots/02-category-create.png)
+![Category Create](docs/screenshots/03-category-create-2.png)
+![Category Create](docs/screenshots/04-category-create-3.png)
+![Categories List](docs/screenshots/05-categories-list.png)
+
+### Fornecedores
+![Suppliers List](docs/screenshots/06-suppliers-list.png)
+
+### Produtos
+![Products List](docs/screenshots/07-products-list.png)
+
+### Clientes
+![Customers List](docs/screenshots/08-customers-list.png)
+
+### Pedidos
+![Order Create](docs/screenshots/09-order-create.png)
+![Orders List](docs/screenshots/10-orders-list.png)
+
+### Pagamentos
+![Payment Create](docs/screenshots/11-payment-create.png)
+
+### Estoque
+![Stock Movement](docs/screenshots/12-stock-movement.png)
+
+### Dashboard
+![Dashboard](docs/screenshots/13-dashboard.png)
+
 ## 🏗️ Arquitetura
 
 Projeto estruturado em **4 camadas** seguindo os princípios de **Clean Architecture**:
