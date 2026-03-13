@@ -1,0 +1,41 @@
+version: '3.8'
+
+services:
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: orderflow-api
+    ports:
+      - "5230:80"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ConnectionStrings__DefaultConnection=Server=sqlserver;Database=OrderFlowDb;User Id=sa;Password=OrderFlow@2024;TrustServerCertificate=True;
+      - Jwt__Key=OrderFlow@SecretKey#2024!XyZ$MnP&QrS
+      - Jwt__Issuer=OrderFlow.API
+      - Jwt__Audience=OrderFlow.Client
+      - Jwt__ExpireHours=8
+    depends_on:
+      - sqlserver
+    networks:
+      - orderflow-network
+
+  sqlserver:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    container_name: orderflow-sqlserver
+    environment:
+      - ACCEPT_EULA=Y
+      - SA_PASSWORD=OrderFlow@2024
+    ports:
+      - "1433:1433"
+    volumes:
+      - sqlserver-data:/var/opt/mssql
+    networks:
+      - orderflow-network
+
+networks:
+  orderflow-network:
+    driver: bridge
+
+volumes:
+  sqlserver-data:
