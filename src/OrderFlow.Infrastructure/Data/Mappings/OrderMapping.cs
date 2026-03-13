@@ -14,7 +14,8 @@ public class OrderMapping : IEntityTypeConfiguration<Order>
 
         builder.Property(x => x.OrderNumber)
             .IsRequired()
-            .ValueGeneratedOnAdd();
+            .ValueGeneratedOnAdd()
+            .Metadata.SetAfterSaveBehavior(Microsoft.EntityFrameworkCore.Metadata.PropertySaveBehavior.Ignore);
 
         builder.HasIndex(x => x.OrderNumber)
             .IsUnique();
